@@ -1,0 +1,182 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "2e946ece-c4df-45c3-b111-1dfa78b69993")
+	(paper "A1")
+	(lib_symbols)
+	(sheet
+		(at 367.03 193.04)
+		(size 39.37 41.91)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "00198da7-f46d-429a-af95-638c46788090")
+		(property "Sheetname" "GPS"
+			(at 367.03 192.3284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "gps.kicad_sch"
+			(at 367.03 235.5346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "MainBoard"
+				(path "/2e946ece-c4df-45c3-b111-1dfa78b69993"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 109.22 187.96)
+		(size 95.25 130.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "6b9150ef-bd32-4563-aae5-9de74c06b9d3")
+		(property "Sheetname" "MCU"
+			(at 109.22 187.2484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "mcu.kicad_sch"
+			(at 109.22 319.3546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "MainBoard"
+				(path "/2e946ece-c4df-45c3-b111-1dfa78b69993"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 457.2 331.47)
+		(size 39.37 45.72)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "80b15eca-44b9-43bc-987a-10a1e9e27513")
+		(property "Sheetname" "WiFi"
+			(at 457.2 330.7584 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "WiFi.kicad_sch"
+			(at 457.2 377.7746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "MainBoard"
+				(path "/2e946ece-c4df-45c3-b111-1dfa78b69993"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 274.32 297.18)
+		(size 72.39 113.03)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "fc8be407-f5d5-4b7a-9cd1-f7b0d3736939")
+		(property "Sheetname" "SDRAM"
+			(at 274.32 296.4684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sdram.kicad_sch"
+			(at 274.32 410.7946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "MainBoard"
+				(path "/2e946ece-c4df-45c3-b111-1dfa78b69993"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

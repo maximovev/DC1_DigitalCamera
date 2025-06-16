@@ -1,15 +1,16 @@
 #ifndef __camera__
 #define __camera__
 
-using namespace libcamera;
-
-namespace maxssau
-{
+//using namespace libcamera;
 
 	#include <iostream>
 	#include <fstream>
 	#include <vector>
 	#include <libcamera/libcamera.h>
+
+namespace maxssau
+{
+	using namespace libcamera;
 
 	enum RPiCamera_Status
 	{
@@ -34,15 +35,16 @@ namespace maxssau
 
 			int Status_Init;
 
-			RPiCamera(PixelFormat pixel_format,int image_height, int image_width)
+			RPiCamera(PixelFormat pixel_format,unsigned int image_height,unsigned int image_width)
 			{
 				cm = std::make_unique<CameraManager>();
 				cm->start();
-				 if (cm->cameras().empty())
-				 {
+				if (cm->cameras().empty())
+				{
 					Status_Init=RPiCamera_NO_CAMERA;
+					cm->stop();
 					return;
-				 }
+				}
 
 				camera = cm->cameras()[0];
     			if (camera->acquire())
@@ -90,13 +92,12 @@ namespace maxssau
 					return;
 				}
 
-				Stream *stream = streamConfig.stream();
+				stream = streamConfig.stream();
     			const std::vector<std::unique_ptr<FrameBuffer>>&buffers = allocator->buffers(stream);
-    			std::vector<Request *> requests;
 
     			for (unsigned int i = 0; i < buffers.size(); ++i) 
 				{
-        			Request *request = camera->createRequest();
+        			request = camera->createRequest();
         			if (!request) 
 					{
             			Status_Init=RPiCamera_REQUEST_ERROR;
@@ -121,7 +122,7 @@ namespace maxssau
 
 			int GetFrame(uint8_t *rawData)
 			{
-				Request *request = requests[0];
+				Request *request = request[0];
 				camera->queueRequest(request);
 				std::unique_ptr<Request> completedRequest;
 				completedRequest.reset(camera->waitForCompletedRequest());
@@ -157,7 +158,10 @@ namespace maxssau
 			std::unique_ptr<CameraManager> cm;
 			std::shared_ptr<Camera> camera;
 			FrameBufferAllocator *allocator;
-	}
+			Stream *stream;
+			std::unique_ptr<Request> request;
+			std::vector<std::unique_ptr<Request>> requests;
+	};
 
 	
 

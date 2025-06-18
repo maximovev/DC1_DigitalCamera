@@ -122,7 +122,7 @@ namespace maxssau
 
 			int GetFrame(uint8_t *rawData)
 			{
-				Request *request = request[0];
+				Request *request = requests[0];
 				camera->queueRequest(request);
 				std::unique_ptr<Request> completedRequest;
 				completedRequest.reset(camera->waitForCompletedRequest());
@@ -160,8 +160,9 @@ namespace maxssau
 			FrameBufferAllocator *allocator;
 			Stream *stream;
 			std::unique_ptr<Request> request;
-			std::vector<std::unique_ptr<Request>> requests;
-	};
+			//std::vector<std::unique_ptr<Request>> requests;
+			std::vector<Request *> requests;
+		};
 
 	
 
